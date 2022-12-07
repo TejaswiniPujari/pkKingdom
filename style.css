@@ -19,7 +19,7 @@
   top: 45vw;
   right: 0;
   height: 10vw;
-  z-index: 1;
+  z-index: 3;
 }
 
 #container {
@@ -47,12 +47,12 @@
   height: 45vw;
 }
 
-.rewards-card {
+#rewards-card {
   background: url(./img/Rewards\ box-min.png) center/100% 100% no-repeat;
   width: calc(90% - 3vw);
   padding: 4vw 3vw 3vw;
   margin: 8vw auto 4vw;
-  height: 70vw;
+  height: 65vw;
 }
 
 .schedule-card {
@@ -68,7 +68,13 @@
   width: calc(90% - 3vw);
   padding: 4vw 3vw 3vw;
   margin: 8vw auto 4vw;
-  height: 110vw;
+  height: 190vw;
+}
+
+.leaderboard-title {
+  width: 70% !important;
+  display: block;
+  margin: 8vw auto 0vw;
 }
 
 .gift-title {
@@ -121,12 +127,20 @@
   width: 20vw;
 }
 
-.reward-collection {
+.reward-collection-for-talent {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
   justify-items: center;
   margin: 0 auto;
+}
+
+#reward-collection-for-user {
+  text-align: center;
+}
+
+#reward-collection-for-user {
+  display: none;
 }
 
 .gift-collection {
@@ -187,15 +201,14 @@
   height: 4vw;
 }
 
-.dot1 {
-  height: 1vw;
-}
 
-.dot2,
-.dot3,
-.dot4 {
+.dot {
   height: 1vw;
   width: 2vw;
+}
+
+.active {
+  width: 6vw !important;
 }
 
 .table-header {
@@ -241,6 +254,11 @@
   justify-content: center;
 }
 
+.leaderboard-data {
+  position: relative;
+  top: -5vw;
+}
+
 .footer {
   color: white;
   align-items: center;
@@ -248,4 +266,56 @@
   text-align: center;
   width: 100vw;
   margin: 0 auto 2vw;
+}
+
+.medal {
+  display: grid;
+  grid-template-columns: 28% 28% 28%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.silver {
+  display: inline-grid;
+  justify-content: center;
+}
+
+.gold {
+  display: inline-grid;
+  justify-content: center;
+  position: relative;
+  top: -10vw;
+
+}
+
+.silver>img,
+.gold>img {
+  height: 30vw;
+  width: 100%;
+}
+
+.medal-data {
+  background-image: url(./img/Silver\ \ bronze\ bg\ box-min.png);
+  background-repeat: no-repeat;
+  height: 40vw;
+  /* width: 2vw; */
+  background-size: contain;
+  position: relative;
+  top: -15vw;
+  z-index: -1;
+}
+
+.medal-info {
+  position: relative;
+  font-size: 3vw;
+  text-align: center;
+  color: burlywood;
+  font-weight: bold;
+  top: -13vw;
+}
+
+.silver-medal {
+  z-index: 2;
+  position: relative;
+  top: 15vw;
 }
