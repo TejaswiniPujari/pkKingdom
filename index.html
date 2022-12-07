@@ -37,31 +37,37 @@
             <img id='reward-round1' onclick="setRound1('reward')" src="./img/round1Select.png" class="action-img">
             <img id='reward-round2' onclick="setRound2('reward')" src="./img/round2UnSelect.png" class="action-img">
         </div>
-        <div class="rewards-card">
+        <div id="rewards-card">
             <img src="./img/Rewards-min.png" class='reward-title'>
-            <div class="reward-collection">
-                <div class="reward-box">
-                    <img src="./img/Star badge-min.png">
+            <div id="reward-collection-for-talent">
+                <div class="reward-collection-for-talent">
+                    <div class="reward-box">
+                        <img src="./img/Star badge-min.png">
+                    </div>
+                    <div class="reward-box">
+                        <img src="./img/Audio theme-min.png">
+                    </div>
+                    <div class="reward-box">
+                        <img src="./img/Superstar profile frame-min.png">
+                    </div>
                 </div>
-                <div class="reward-box">
-                    <img src="./img/Audio theme-min.png">
-                </div>
-                <div class="reward-box">
-                    <img src="./img/Superstar profile frame-min.png">
-                </div>
+            </div>
+            <div id="reward-collection-for-user">
+                <img src="./img/Rewards/Beans 1 Users-min.png" style="height: 20vw;" id="user-rewards-img">
             </div>
             <div class="carousel">
-                <img src="./img/left.png" class="left-right-arrow">
-                <div>
-                    <img src="./img/Leaderboard rect-min.png" class="dot1">
-                    <img src="./img/Leaderboard rect-min.png" class="dot2">
-                    <img src="./img/Leaderboard rect-min.png" class="dot3">
-                    <img src="./img/Leaderboard rect-min.png" class="dot4">
+                <img src="./img/left.png" class="left-right-arrow" onclick="onLeftShift()">
+                <div id="carousel-dot">
+                    <img src="./img/Leaderboard rect-min.png" class="dot active">
+                    <img src="./img/Leaderboard rect-min.png" class="dot">
+                    <img src="./img/Leaderboard rect-min.png" class="dot">
+                    <img src="./img/Leaderboard rect-min.png" class="dot">
+                    <img src="./img/Leaderboard rect-min.png" class="dot" id="last-dot">
                 </div>
-                <img src="./img/right.png" class="left-right-arrow">
+                <img src="./img/right.png" class="left-right-arrow" onclick="onRightShift()">
             </div>
-            <div class="reward-text">15 days PK STAR BADGE + Audio theme of<br /> Pk combat + PK SuperStar <br />Profile
-                Frame</div>
+            <div class="reward-text" id="reward-info">10 Days Celebration Audio Room theme + Fury <br /> Profile Frame
+            </div>
 
         </div>
         <div class="action">
@@ -124,74 +130,101 @@
                 class="action-img">
         </div>
         <div class="leaderboard-card">
-            <img src="./img/Leaderboard text-min.png" class='gift-title'>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+            <img src="./img/Leaderboard text-min.png" class='leaderboard-title'>
+            <div class="medal">
+                <div class="silver">
+                    <img src="./img/Silver frame-min.png" class="silver-medal">
+                    <img src="./img/Silver  bronze bg box-min.png" class="silver-bg">
+                    <div class="medal-info">
+                        Name<br />Id-00000000
+                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                    </div>
+                </div>
+                <div class="gold">
+                    <img src="./img/Gold frame-min.png" class="silver-medal">
+                    <img src="./img/Gold background box-min.png" class="silver-bg">
+                    <div class="medal-info">
+                        Name<br />Id-00000000
+                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                    </div>
+                </div>
+                <div class="silver">
+                    <img src="./img/Silver frame-min.png" class="silver-medal">
+                    <img src="./img/Silver  bronze bg box-min.png" class="silver-bg">
+                    <div class="medal-info">
+                        Name<br />Id-00000000
+                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                    </div>
                 </div>
             </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+            <div class="leaderboard-data">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
-            </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
-            </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
-            </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
-            </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
-            </div>
-            <div class="leaderboard-bg">
-                <div class="leaderboard">
-                    <p>3.</p>
-                    <img src="./img/Profile frame-min.png" class="profile-img">
-                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                    <p>00000000</p>
-                    <img src="./img/beans-min.png" class="beans-img">
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
+                </div>
+                <div class="leaderboard-bg">
+                    <div class="leaderboard">
+                        <p>3.</p>
+                        <img src="./img/Profile frame-min.png" class="profile-img">
+                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                        <p>00000000</p>
+                        <img src="./img/beans-min.png" class="beans-img">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer">ALL RIGHTS RESERVED BY STREAMKAR </div>
     </div>
-    <script src="./script.js" />
+    <script type="text/javascript" src="script.js" />
 </body>
-
 </html>
