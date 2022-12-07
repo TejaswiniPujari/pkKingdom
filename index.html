@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <img src="./img/headerMin.png" id="header">
+    <img src="./img/Guide Button-min.png" id="guid-btn">
+    <div id="container">
+        <div class="gift-card">
+            <img src="./img/Gifts title-min.png" class='gift-title'>
+            <div class="gift-text">By sending specific gifts, users will trigger a special room effect</div>
+            <div class="gift-collection">
+                <img src="./img/Chocolate gift.png" class="img">
+                <img src="./img/Chocolate box gift.png" class="img">
+                <img src="./img/Pyar gift.png" class="img">
+                <img src="./img/Bhangra.png" class="img">
+            </div>
+        </div>
+        <div class="effects-card">
+            <img src="./img/Effects header-min.png" class='gift-title'>
+            <div class="effects-collection">
+                <img src="./img/Senior-min.png" class="img">
+                <img src="./img/Soilder-min.png" class="img">
+                <img src="./img/Hero-min.png" class="two-img">
+            </div>
+        </div>
+        <div class="action">
+            <img id='reward-user' onclick="setUserMode('reward')" src="./img/userUnSelect.png" class="action-img">
+            <img id='reward-talent' onclick="setTalentMode('reward')" src="./img/talentSelect.png" class="action-img">
+            <img id='reward-round1' onclick="setRound1('reward')" src="./img/round1Select.png" class="action-img">
+            <img id='reward-round2' onclick="setRound2('reward')" src="./img/round2UnSelect.png" class="action-img">
+        </div>
+        <div class="rewards-card">
+            <img src="./img/Rewards-min.png" class='reward-title'>
+            <div class="reward-collection">
+                <div class="reward-box">
+                    <img src="./img/Star badge-min.png">
+                </div>
+                <div class="reward-box">
+                    <img src="./img/Audio theme-min.png">
+                </div>
+                <div class="reward-box">
+                    <img src="./img/Superstar profile frame-min.png">
+                </div>
+            </div>
+            <div class="carousel">
+                <img src="./img/left.png" class="left-right-arrow">
+                <div>
+                    <img src="./img/Leaderboard rect-min.png" class="dot1">
+                    <img src="./img/Leaderboard rect-min.png" class="dot2">
+                    <img src="./img/Leaderboard rect-min.png" class="dot3">
+                    <img src="./img/Leaderboard rect-min.png" class="dot4">
+                </div>
+                <img src="./img/right.png" class="left-right-arrow">
+            </div>
+            <div class="reward-text">15 days PK STAR BADGE + Audio theme of<br /> Pk combat + PK SuperStar <br />Profile
+                Frame</div>
+
+        </div>
+        <div class="action">
+            <img id='schedule-round1' onclick="setRound1('schedule')" src="./img/round1Select.png" class="action-img">
+            <img id='schedule-round2' onclick="setRound2('schedule')" src="./img/round2UnSelect.png" class="action-img">
+        </div>
+        <div class="schedule-card">
+            <img src="./img/Schedule text-min.png" class='gift-title schedule-title'>
+            <div class="table-header">
+                <div>Date</div>
+                <div>Player1</div>
+                <div>VS</div>
+                <div>Player2</div>
+                <div>Time</div>
+            </div>
+            <div class="table-body">
+                <div>Date</div>
+                <div style="align-items: 'center';">Name Id:00000000</div>
+                <div>VS</div>
+                <div>Name Id:00000000</div>
+                <div>Time</div>
+            </div>
+            <div class="table-body">
+                <div>Date</div>
+                <div>Name Id:00000000</div>
+                <div>VS</div>
+                <div>Name Id:00000000</div>
+                <div>Time</div>
+            </div>
+            <div class="table-body">
+                <div>Date</div>
+                <div>Name Id:00000000</div>
+                <div>VS</div>
+                <div>Name Id:00000000</div>
+                <div>Time</div>
+            </div>
+            <div class="table-body">
+                <div>Date</div>
+                <div>Name Id:00000000</div>
+                <div>VS</div>
+                <div>Name Id:00000000</div>
+                <div>Time</div>
+            </div>
+            <div class="table-body">
+                <div>Date</div>
+                <div>Name Id:00000000</div>
+                <div>VS</div>
+                <div>Name Id:00000000</div>
+                <div>Time</div>
+            </div>
+        </div>
+        <div class="action">
+            <img id='leaderboard-user' onclick="setUserMode('leaderboard')" src="./img/userUnSelect.png"
+                class="action-img">
+            <img id='leaderboard-talent' onclick="setTalentMode('leaderboard')" src="./img/talentSelect.png"
+                class="action-img">
+            <img id='leaderboard-round1' onclick="setRound1('leaderboard')" src="./img/round1Select.png"
+                class="action-img">
+            <img id='leaderboard-round2' onclick="setRound2('leaderboard')" src="./img/round2UnSelect.png"
+                class="action-img">
+        </div>
+        <div class="leaderboard-card">
+            <img src="./img/Leaderboard text-min.png" class='gift-title'>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+            <div class="leaderboard-bg">
+                <div class="leaderboard">
+                    <p>3.</p>
+                    <img src="./img/Profile frame-min.png" class="profile-img">
+                    <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                    <p>00000000</p>
+                    <img src="./img/beans-min.png" class="beans-img">
+                </div>
+            </div>
+        </div>
+        <div class="footer">ALL RIGHTS RESERVED BY STREAMKAR </div>
+    </div>
+    <script src="./script.js" />
+</body>
+
+</html>
