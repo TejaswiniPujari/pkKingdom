@@ -1,230 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="./script.js" defer></script>
+    </head>
 
-<body>
-    <img src="./img/headerMin.png" id="header">
-    <img src="./img/Guide Button-min.png" id="guid-btn">
-    <div id="container">
-        <div class="gift-card">
-            <img src="./img/Gifts title-min.png" class='gift-title'>
-            <div class="gift-text">By sending specific gifts, users will trigger a special room effect</div>
-            <div class="gift-collection">
-                <img src="./img/Chocolate gift.png" class="img">
-                <img src="./img/Chocolate box gift.png" class="img">
-                <img src="./img/Pyar gift.png" class="img">
-                <img src="./img/Bhangra.png" class="img">
-            </div>
-        </div>
-        <div class="effects-card">
-            <img src="./img/Effects header-min.png" class='gift-title'>
-            <div class="effects-collection">
-                <img src="./img/Senior-min.png" class="img">
-                <img src="./img/Soilder-min.png" class="img">
-                <img src="./img/Hero-min.png" class="two-img">
-            </div>
-        </div>
-        <div class="action">
-            <img id='reward-user' onclick="setUserMode('reward')" src="./img/userUnSelect.png" class="action-img">
-            <img id='reward-talent' onclick="setTalentMode('reward')" src="./img/talentSelect.png" class="action-img">
-            <img id='reward-round1' onclick="setRound1('reward')" src="./img/round1Select.png" class="action-img">
-            <img id='reward-round2' onclick="setRound2('reward')" src="./img/round2UnSelect.png" class="action-img">
-        </div>
-        <div id="rewards-card">
-            <img src="./img/Rewards-min.png" class='reward-title'>
-            <div id="reward-collection-for-talent">
-                <div class="reward-collection-for-talent">
-                    <div class="reward-box">
-                        <img src="./img/Star badge-min.png">
-                    </div>
-                    <div class="reward-box">
-                        <img src="./img/Audio theme-min.png">
-                    </div>
-                    <div class="reward-box">
-                        <img src="./img/Superstar profile frame-min.png">
-                    </div>
-                </div>
-            </div>
-            <div id="reward-collection-for-user">
-                <img src="./img/Rewards/Beans 1 Users-min.png" style="height: 20vw;" id="user-rewards-img">
-            </div>
-            <div class="carousel">
-                <img src="./img/left.png" class="left-right-arrow" onclick="onLeftShift()">
-                <div id="carousel-dot">
-                    <img src="./img/Leaderboard rect-min.png" class="dot active">
-                    <img src="./img/Leaderboard rect-min.png" class="dot">
-                    <img src="./img/Leaderboard rect-min.png" class="dot">
-                    <img src="./img/Leaderboard rect-min.png" class="dot">
-                    <img src="./img/Leaderboard rect-min.png" class="dot" id="last-dot">
-                </div>
-                <img src="./img/right.png" class="left-right-arrow" onclick="onRightShift()">
-            </div>
-            <div class="reward-text" id="reward-info">10 Days Celebration Audio Room theme + Fury <br /> Profile Frame
-            </div>
+    <body id="body">
 
-        </div>
-        <div class="action">
-            <img id='schedule-round1' onclick="setRound1('schedule')" src="./img/round1Select.png" class="action-img">
-            <img id='schedule-round2' onclick="setRound2('schedule')" src="./img/round2UnSelect.png" class="action-img">
-        </div>
-        <div class="schedule-card">
-            <img src="./img/Schedule text-min.png" class='gift-title schedule-title'>
-            <div class="table-header">
-                <div>Date</div>
-                <div>Player1</div>
-                <div>VS</div>
-                <div>Player2</div>
-                <div>Time</div>
-            </div>
-            <div class="table-body">
-                <div>Date</div>
-                <div style="align-items: 'center';">Name Id:00000000</div>
-                <div>VS</div>
-                <div>Name Id:00000000</div>
-                <div>Time</div>
-            </div>
-            <div class="table-body">
-                <div>Date</div>
-                <div>Name Id:00000000</div>
-                <div>VS</div>
-                <div>Name Id:00000000</div>
-                <div>Time</div>
-            </div>
-            <div class="table-body">
-                <div>Date</div>
-                <div>Name Id:00000000</div>
-                <div>VS</div>
-                <div>Name Id:00000000</div>
-                <div>Time</div>
-            </div>
-            <div class="table-body">
-                <div>Date</div>
-                <div>Name Id:00000000</div>
-                <div>VS</div>
-                <div>Name Id:00000000</div>
-                <div>Time</div>
-            </div>
-            <div class="table-body">
-                <div>Date</div>
-                <div>Name Id:00000000</div>
-                <div>VS</div>
-                <div>Name Id:00000000</div>
-                <div>Time</div>
+        <!------------ guidline ---------->
+        <div id="modal">
+            <img src="./img/close.png" id="close-btn">
+            <div id="guidline">
+                <div style="text-align: center;">
+                    <img src="./img/Guide-tag.png" style="height: 10vw;">
+                </div>
+                <ul>
+                    <li>Top 16 talents have to register their ids with SK employees to participate in this event.</li>
+                    <li>Talent must be level 5 or above to play this pk.</li>
+                    <li>The host must invite for the 5min Pk Battle in order to compete with the opponent talent on
+                        scheduled time under Pk Kingdom feature.</li>
+                    <li>More Powerful Effects will be seen with gifts that cost 5000 beans or more.</li>
+                    <li>There will be 2 Rounds, talent that wins maximum points will be qualified to the final round.
+                    </li>
+                    <li>The winner of this tournament will be decided based on the points they receive in the Final
+                        Round.</li>
+                    <li>Talents will be ranked on the leader board according to the number of points they receive in
+                        each Round.</li>
+                    <li>Users will be ranked according to their spending on each round of the tournament.</li>
+                    <li>If any talent's power is exhausted then the match ends automatically.</li>
+                    <li>The maximum spender will be the winner of the tournament.</li>
+                    <li>Rewards will be shared as per beans received.</li>
+                    <li>Top winner Talent of Round 2 will be mentioned in the Banner for 3 days</li>
+                    <li>ROUND 1 Total 16 talents will be participating.</li>
+                    <li>FINAL ROUND: Top 10 Talents with maximum points earned will qualify for round 2 Battle.</li>
+                </ul>
             </div>
         </div>
-        <div class="action">
-            <img id='leaderboard-user' onclick="setUserMode('leaderboard')" src="./img/userUnSelect.png"
-                class="action-img">
-            <img id='leaderboard-talent' onclick="setTalentMode('leaderboard')" src="./img/talentSelect.png"
-                class="action-img">
-            <img id='leaderboard-round1' onclick="setRound1('leaderboard')" src="./img/round1Select.png"
-                class="action-img">
-            <img id='leaderboard-round2' onclick="setRound2('leaderboard')" src="./img/round2UnSelect.png"
-                class="action-img">
-        </div>
-        <div class="leaderboard-card">
-            <img src="./img/Leaderboard text-min.png" class='leaderboard-title'>
-            <div class="medal">
-                <div class="silver">
-                    <img src="./img/Silver frame-min.png" class="silver-medal">
-                    <img src="./img/Silver  bronze bg box-min.png" class="silver-bg">
-                    <div class="medal-info">
-                        Name<br />Id-00000000
-                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+
+        <div id="main">
+
+            <img src="./img/Guide Button-min.png" id="guid-btn">
+
+            <!----------- header img ------------->
+            <img src="./img/headerMin.png" class="header-img">
+
+            <div style="padding: 0 3vw;">
+
+                <!---------- gift banner info --------->
+                <div class="banner">
+                    <div class="banner-details">
+                        <img src="./img/Gifts title-min.png" class="banner-title">
+                        <div id="gift-description">By sending specific gifts, users will trigger a special room effect</div>
+                        <div id="gift-img">
+                            <img src="./img/Chocolate gift.png">
+                            <img src="./img/Chocolate box gift.png">
+                            <img src="./img/Pyar gift.png">
+                            <img src="./img/Bhangra.png">
+                        </div>
                     </div>
                 </div>
-                <div class="gold">
-                    <img src="./img/Gold frame-min.png" class="silver-medal">
-                    <img src="./img/Gold background box-min.png" class="silver-bg">
-                    <div class="medal-info">
-                        Name<br />Id-00000000
-                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                <br />
+
+                <!------- effects banner info -------->
+                <div class="banner" id="effects-banner">
+                    <div class="banner-details">
+                        <img src="./img/Effects header-min.png" class="banner-title">
+                        <div id="effects-img">
+                            <img src="./img/Senior-min.png">
+                            <img src="./img/Soilder-min.png">
+                            <img src="./img/Hero-min.png" id="twoimg-in-oneimg">
+                        </div>
                     </div>
                 </div>
-                <div class="silver">
-                    <img src="./img/Silver frame-min.png" class="silver-medal">
-                    <img src="./img/Silver  bronze bg box-min.png" class="silver-bg">
-                    <div class="medal-info">
-                        Name<br />Id-00000000
-                        <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                <br />
+
+                <!------- action for reward banner --------->
+                <div class="action">
+                    <img id='reward-user' onclick="setUserMode('reward')" src="./img/userUnSelect.png" class="action-img">
+                    <img id='reward-talent' onclick="setTalentMode('reward')" src="./img/talentSelect.png"
+                        class="action-img">
+                    <img id='reward-round1' onclick="setRound1('reward')" src="./img/round1Select.png" class="action-img">
+                    <img id='reward-round2' onclick="setRound2('reward')" src="./img/round2UnSelect.png" class="action-img">
+                </div>
+                <br />
+
+                <!-------- reward banner ----------->
+                <div class="banner" id="rewards-banner">
+                    <div class="banner-details">
+                        <img src="./img/Rewards-min.png" class="banner-title" id="reward-title">
+                        <div id="reward-collection-for-talent">
+                            <img src="./img/Rewards/Star Badge-min.png">
+                            <img src="./img/Rewards/Audio Theme-min.png">
+                            <img src="./img/Rewards/Superstar-min.png">
+                        </div>
+                        <div id="reward-collection-for-user">
+                            <img src="./img/Rewards/Beans 1 Users-min.png" style="height: 20vw;" id="user-rewards-img">
+                        </div>
+                        <div class="carousel">
+                            <img src="./img/left.png" class="left-right-arrow" onclick="onLeftShift()">
+                            <div id="carousel-dot">
+                                <img src="./img/Leaderboard rect-min.png" class="dot active">
+                                <img src="./img/Leaderboard rect-min.png" class="dot">
+                                <img src="./img/Leaderboard rect-min.png" class="dot">
+                                <img src="./img/Leaderboard rect-min.png" class="dot">
+                                <img src="./img/Leaderboard rect-min.png" class="dot" id="last-dot">
+                            </div>
+                            <img src="./img/right.png" class="left-right-arrow" onclick="onRightShift()">
+                        </div>
+                        <div id="reward-des">10 Days Celebration Audio Room theme + Fury <br /> Profile Frame</div>
+                    </div>
+                </div>
+                <br />
+
+                <!-------- action for schedule banner ----------->
+                <div class="action">
+                    <img id='schedule-round1' onclick="setRound1('schedule')" src="./img/round1Select.png"
+                        class="action-img">
+                    <img id='schedule-round2' onclick="setRound2('schedule')" src="./img/round2UnSelect.png"
+                        class="action-img">
+                </div>
+                <br />
+
+                <!------------- schedule banner -------------->
+                <div class="banner" id="schedule-banner">
+                    <div class="banner-details">
+                        <br />
+                        <img src="./img/Schedule text-min.png" id="schedule-title">
+                        <div id="table-heading">
+                            <div class="table-heading-title">
+                                <div>Date</div>
+                                <div>Player1</div>
+                                <div>VS</div>
+                                <div>Player2</div>
+                                <div>Time</div>
+                            </div>
+                        </div>
+                        <div class="table-data table-row">
+                            <div>Date</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>VS</div>
+                            <div>Name <br /> Id:00000000</div>
+                            <div>Time</div>
+                        </div>
+                        <div class="table-data table-row">
+                            <div>Date</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>VS</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>Time</div>
+                        </div>
+                        <div class="table-data table-row">
+                            <div>Date</div>
+                            <div>Name<br /> Id:00000000</div>
+                            <div>VS</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>Time</div>
+                        </div>
+                        <div class="table-data table-row">
+                            <div>Date</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>VS</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>Time</div>
+                        </div>
+                        <div class="table-data">
+                            <div>Date</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>VS</div>
+                            <div>Name <br />Id:00000000</div>
+                            <div>Time</div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <!---------- action for leaderboard banner -------->
+                <div class="action">
+                    <img id='leaderboard-user' onclick="setUserMode('leaderboard')" src="./img/userUnSelect.png"
+                        class="action-img">
+                    <img id='leaderboard-talent' onclick="setTalentMode('leaderboard')" src="./img/talentSelect.png"
+                        class="action-img">
+                    <img id='leaderboard-round1' onclick="setRound1('leaderboard')" src="./img/round1Select.png"
+                        class="action-img">
+                    <img id='leaderboard-round2' onclick="setRound2('leaderboard')" src="./img/round2UnSelect.png"
+                        class="action-img">
+                </div>
+                <br />
+
+                <!------------- leaderboard banner ------------>
+                <div class="banner" id="leaderboard-banner">
+                    <div class="banner-details">
+                        <img src="./img/Leaderboard text-min.png" class="banner-title" id="leaderboard-title">
+                        <div id="medal">
+                            <div id="silver">
+                                <div class="medal-info">
+                                    Name<br />Id-00000000
+                                    <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                                </div>
+                                <img src="./img/Silver frame-min.png" id="silver-medal-img">
+                            </div>
+                            <div id="gold">
+                                <div class="medal-info">
+                                    Name<br />Id-00000000
+                                    <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                                </div>
+                                <img src="./img/Gold frame-min.png" id="silver-medal-img">
+                            </div>
+                            <div id="bronze">
+                                <div class="medal-info">
+                                    Name<br />Id-00000000
+                                    <br>00000000<img src="./img/beans-min.png" style="height:3.5vw">
+                                </div>
+                                <img src="./img/Bronze frame-min.png" id="silver-medal-img">
+                            </div>
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
+                        <div class="leaderboard-list">
+                            <div>3.</div>
+                            <img src="./img/Profile frame-min.png" id="profile-img">
+                            <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
+                            <div>00000000</div>
+                            <img src="./img/beans-min.png" id="beans-img">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="leaderboard-data">
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-                <div class="leaderboard-bg">
-                    <div class="leaderboard">
-                        <p>3.</p>
-                        <img src="./img/Profile frame-min.png" class="profile-img">
-                        <div style="text-align: start;">Name<br />Sk Id - 00000000</div>
-                        <p>00000000</p>
-                        <img src="./img/beans-min.png" class="beans-img">
-                    </div>
-                </div>
-            </div>
+            <br />
+
+            <!--------- footer --------->
+            <div id="footer">ALL RIGHTS RESERVED BY STREAMKAR </div>
         </div>
-        <div class="footer">ALL RIGHTS RESERVED BY STREAMKAR </div>
-    </div>
-    <script type="text/javascript" src="script.js" />
-</body>
+        <br />
+    </body>
 </html>
