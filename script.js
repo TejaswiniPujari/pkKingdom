@@ -19,6 +19,7 @@ const rewardsUser = {
     3: `User receives 10% of total beans pot`,
     4: `User receives 5% of total beans pot`
 }
+
 const rewardsImgList = {
     0: './img/Rewards/Beans 1 Users-min.png',
     1: './img/Rewards/Beans 2 Users-min.png',
@@ -40,9 +41,35 @@ let roundNumber = {
 };
 
 let slideNumber = 0;
+
+var modal = document.getElementById("modal");
+var guidBtn = document.getElementById("guid-btn");
+var main = document.getElementById('main');
+var closeBtn = document.getElementById("close-btn");
 const dots = document.getElementsByClassName('dot');
 const lastdot = document.getElementById('last-dot');
 lastdot.remove();
+
+// show guidline on btn click
+guidBtn.onclick = function () {
+    modal.style.display = "block";
+    main.style.opacity = 0.2;
+    document.getElementById('body').classList.add('body');
+}
+
+// close guidline on close btn click
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+    main.style.opacity = 1;
+    document.getElementById('body').classList.remove('body');
+}
+
+// click outside of guidline box then guidline will close 
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 function onLeftShift() {
     if (slideNumber > 0) {
@@ -51,33 +78,31 @@ function onLeftShift() {
         slideNumber = slideNumber - 1;
         document.getElementById('user-rewards-img').src = rewardsImgList[slideNumber];
         if (mode.reward == 'user')
-            document.getElementById('reward-info').innerHTML = rewardsUser[slideNumber];
+            document.getElementById('reward-des').innerHTML = rewardsUser[slideNumber];
         else {
             if (roundNumber.reward == 1)
-                document.getElementById('reward-info').innerHTML = rewardsTalentRound1[slideNumber];
+                document.getElementById('reward-des').innerHTML = rewardsTalentRound1[slideNumber];
             if (roundNumber.reward == 2)
-                document.getElementById('reward-info').innerHTML = rewardsTalentRound2[slideNumber];
+                document.getElementById('reward-des').innerHTML = rewardsTalentRound2[slideNumber];
         }
     }
 }
 function onRightShift() {
-    if (slideNumber < dots.length) {
+    if (slideNumber < dots.length - 1) {
         dots[slideNumber + 1].classList.add("active");
         dots[slideNumber].classList.remove('active');
         slideNumber = slideNumber + 1;
         document.getElementById('user-rewards-img').src = rewardsImgList[slideNumber];
         if (mode.reward == 'user')
-            document.getElementById('reward-info').innerHTML = rewardsUser[slideNumber];
+            document.getElementById('reward-des').innerHTML = rewardsUser[slideNumber];
         else {
             if (roundNumber.reward == 1)
-                document.getElementById('reward-info').innerHTML = rewardsTalentRound1[slideNumber];
+                document.getElementById('reward-des').innerHTML = rewardsTalentRound1[slideNumber];
             if (roundNumber.reward == 2)
-                document.getElementById('reward-info').innerHTML = rewardsTalentRound2[slideNumber];
+                document.getElementById('reward-des').innerHTML = rewardsTalentRound2[slideNumber];
         }
     }
 }
-
-
 
 function setUserMode(cardName) {
     if (mode[cardName] == 'talent') {
@@ -90,9 +115,10 @@ function setUserMode(cardName) {
         dots[slideNumber].classList.remove('active');
         dots[0].classList.add("active");
         slideNumber = 0;
-        document.getElementById('reward-info').innerHTML = rewardsUser[slideNumber];
+        document.getElementById('reward-des').innerHTML = rewardsUser[slideNumber];
     }
 }
+
 function setTalentMode(cardName) {
     if (mode[cardName] == 'user') {
         document.getElementById(`${cardName}-user`).src = './img/userUnSelect.png';
@@ -105,11 +131,12 @@ function setTalentMode(cardName) {
         dots[0].classList.add("active");
         slideNumber = 0;
         if (roundNumber.reward == 1)
-            document.getElementById('reward-info').innerHTML = rewardsTalentRound1[slideNumber];
+            document.getElementById('reward-des').innerHTML = rewardsTalentRound1[slideNumber];
         if (roundNumber.reward == 2)
-            document.getElementById('reward-info').innerHTML = rewardsTalentRound2[slideNumber];
+            document.getElementById('reward-des').innerHTML = rewardsTalentRound2[slideNumber];
     }
 }
+
 function setRound1(cardName) {
     if (roundNumber[cardName] == 2) {
         document.getElementById(`${cardName}-round1`).src = './img/round1Select.png';
@@ -119,12 +146,12 @@ function setRound1(cardName) {
         dots[0].classList.add("active");
         slideNumber = 0;
         if (mode.reward == 'user')
-            document.getElementById('reward-info').innerHTML = rewardsUser[slideNumber]
+            document.getElementById('reward-des').innerHTML = rewardsUser[slideNumber]
         else
-            document.getElementById('reward-info').innerHTML = rewardsTalentRound1[slideNumber]
+            document.getElementById('reward-des').innerHTML = rewardsTalentRound1[slideNumber]
     }
-
 }
+
 function setRound2(cardName) {
     if (roundNumber[cardName] == 1) {
         document.getElementById(`${cardName}-round1`).src = './img/round1UnSelect.png';
@@ -134,8 +161,8 @@ function setRound2(cardName) {
         dots[0].classList.add("active");
         slideNumber = 0;
         if (mode.reward == 'user')
-            document.getElementById('reward-info').innerHTML = rewardsUser[slideNumber]
+            document.getElementById('reward-des').innerHTML = rewardsUser[slideNumber]
         else
-            document.getElementById('reward-info').innerHTML = rewardsTalentRound2[slideNumber]
+            document.getElementById('reward-des').innerHTML = rewardsTalentRound2[slideNumber]
     }
 }
