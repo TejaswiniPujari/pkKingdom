@@ -1,321 +1,283 @@
-* {
-  margin: 0;
-  padding: 0;
+body {
+    height: 100%;
+    background-image: url(./img/Bg-min.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
 }
 
-#header {
-  position: absolute;
-  top: 0;
-  width: 100vw;
+.body {
+    overflow: hidden;
 }
 
-#bg-min {
-  position: relative;
-  top: -0.5rem;
+/*---------- header---------- */
+.header-img {
+    width: 100vw;
+}
+
+/* --------guidline modal------- */
+#modal {
+    display: none;
+    height: 100vw;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
 }
 
 #guid-btn {
-  position: fixed;
-  top: 45vw;
-  right: 0;
-  height: 10vw;
-  z-index: 3;
+    height: 10vw;
+    position: absolute;
+    top: 50vw;
+    right: 0;
 }
 
-#container {
-  background: url(./img/Bg-min.png) center/100% 100% no-repeat;
-  background-size: cover;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 55vw;
+#guidline {
+    position: fixed;
+    top: 18vw;
+    height: 70vh;
+    background-image: url(./img/guidline-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 10vw;
+    text-align: start;
 }
 
-.gift-card {
-  background: url(./img/Gifts\ box-min.png) center/100% 100% no-repeat;
-  width: calc(90% - 3vw);
-  padding: 4vw 3vw 3vw;
-  margin: 8vw auto 4vw;
-  height: 55vw;
+ul {
+    height: 60vh;
+    overflow: scroll;
 }
 
-.effects-card {
-  background: url(./img/Effects\ box-min.png) center/100% 100% no-repeat;
-  width: calc(90% - 3vw);
-  padding: 4vw 3vw 3vw;
-  margin: 8vw auto 4vw;
-  height: 45vw;
+#close-btn {
+    height: 10vw;
+    float: right;
+    padding: 3vw;
 }
 
-#rewards-card {
-  background: url(./img/Rewards\ box-min.png) center/100% 100% no-repeat;
-  width: calc(90% - 3vw);
-  padding: 4vw 3vw 3vw;
-  margin: 8vw auto 4vw;
-  height: 65vw;
+/*------ banner------ */
+.banner {
+    background-image: url(./img/Gifts\ box-min.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 68vw;
+    text-align: center;
 }
 
-.schedule-card {
-  background: url(./img/Schedule\ box-min.png) center/100% 100% no-repeat;
-  width: calc(90% - 3vw);
-  padding: 4vw 3vw 3vw;
-  margin: 8vw auto 4vw;
-  height: 80vw;
+.banner-details {
+    padding: 5vw;
 }
 
-.leaderboard-card {
-  background: url(./img/Leaderboard\ box-min.png) center/100% 100% no-repeat;
-  width: calc(90% - 3vw);
-  padding: 4vw 3vw 3vw;
-  margin: 8vw auto 4vw;
-  height: 190vw;
+.banner-title {
+    width: 60vw;
+    padding: 5vw 0 4vw;
 }
 
-.leaderboard-title {
-  width: 70% !important;
-  display: block;
-  margin: 8vw auto 0vw;
+/* ------gift banner----- */
+#gift-img {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
 }
 
-.gift-title {
-  width: 70% !important;
-  display: block;
-  margin: 5vw auto 0vw;
+#gift-img img {
+    height: 18vw;
+    width: 18vw;
 }
 
-.reward-title {
-  display: block;
-  margin: 3vw auto 4vw;
-  height: 10vw;
-  width: 60% !important;
+/* ---------reward banner-------- */
+#reward-des {
+    font-size: 4vw;
+    font-weight: bold;
+    padding-bottom: 4vw;
 }
 
-.reward-box img {
-  width: 100%;
-  height: 100%;
-  transform: scale(0.7, 0.7);
+#reward-collection-for-talent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
 }
 
-.schedule-title {
-  margin: 2vw auto 0vw;
-  height: 10vw;
-}
-
-.gift-text {
-  width: 90% !important;
-  margin: 0 auto;
-  font-size: 4vw;
-  color: black;
-  font-weight: bold;
-  padding-top: 5vw;
-  text-align: center;
-}
-
-.reward-text {
-  width: 100% !important;
-  font-size: 4vw;
-  color: black;
-  font-weight: bold;
-  text-align: center;
-}
-
-.reward-box {
-  background-image: url(./img/Rewards\ small\ box-min.png);
-  background-repeat: no-repeat;
-  height: 20vw;
-  background-size: contain;
-  width: 20vw;
-}
-
-.reward-collection-for-talent {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-evenly;
-  justify-items: center;
-  margin: 0 auto;
+#reward-collection-for-talent img {
+    height: 20vw;
 }
 
 #reward-collection-for-user {
-  text-align: center;
+    display: none;
 }
 
-#reward-collection-for-user {
-  display: none;
+#rewards-banner {
+    height: 80vw;
 }
 
-.gift-collection {
-  margin: 5vw auto 0vw;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-}
-
-.effects-collection {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 25% 25% 40%;
-  justify-content: center;
-}
-
-.action {
-  display: grid;
-  grid-template-columns: 30% 30%;
-  gap: 20px 10px;
-  justify-content: space-around;
-  justify-items: center;
-  margin: 8vw auto 4vw;
-}
-
-.img {
-  height: 18vw;
-  width: 18vw;
-}
-
-.two-img {
-  height: 18vw;
-  width: 36vw;
-}
-
-.action-img {
-  height: 10vw;
-  width: 35vw;
-}
-
-.profile-img {
-  height: 8vw;
-}
-
-.beans-img {
-  height: 4vw;
-}
-
-.carousel {
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
-  justify-items: center;
-  align-items: center;
-  padding: 4vw 0;
+#reward-title {
+    width: 40vw;
 }
 
 .left-right-arrow {
-  height: 4vw;
+    height: 4vw;
 }
 
+.carousel {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-items: center;
+    align-items: center;
+    padding: 4vw 0;
+}
 
 .dot {
-  height: 1vw;
-  width: 2vw;
+    height: 1vw;
+    width: 2vw;
 }
 
 .active {
-  width: 6vw !important;
+    width: 6vw !important;
 }
 
-.table-header {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  color: bisque;
-  justify-items: center;
-  font-size: 4vw;
-  margin: 5vw 0 4vw;
+/*-------- effect banner------ */
+#effects-banner {
+    height: 55vw;
 }
 
-.table-body {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  color: black;
-  justify-items: center;
-  font-size: 3.5vw;
-  margin-top: 2vw;
-  align-items: center;
-  font-weight: bold;
+#effects-img {
+    display: grid;
+    grid-template-columns: 25% 25% 40%;
+    justify-content: center;
 }
 
-.leaderboard-bg {
-  background-image: url(./img/Leaderboard\ rect-min.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 70vw;
-  margin: 0 auto;
-  border-radius: 20px;
-  background-size: contain;
+#effects-img img {
+    height: 18vw;
+    width: 18vw;
 }
 
-.leaderboard {
-  height: 12vw;
-  width: 70vw;
-  margin: 0 auto 5px;
-  display: grid;
-  grid-template-columns: 10% 15% 40% 20% 15%;
-  color: white;
-  font-size: 3vw;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
+#twoimg-in-oneimg {
+    width: 36vw !important;
 }
 
-.leaderboard-data {
-  position: relative;
-  top: -5vw;
+/*---- schedule banner----- */
+#schedule-banner {
+    height: 85vw;
 }
 
-.footer {
-  color: white;
-  align-items: center;
-  font-size: large;
-  text-align: center;
-  width: 100vw;
-  margin: 0 auto 2vw;
+#schedule-title {
+    width: 50vw;
+    padding-bottom: 2vw;
 }
 
-.medal {
-  display: grid;
-  grid-template-columns: 28% 28% 28%;
-  align-items: center;
-  justify-content: space-evenly;
+#table-heading {
+    background-color: #2e140ee3;
+    height: 10vw;
+    margin-bottom: 1vw;
 }
 
-.silver {
-  display: inline-grid;
-  justify-content: center;
+.table-heading-title {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    padding: 3.5vw;
+    font-size: 4vw;
+    color: bisque;
+    font-weight: bold;
 }
 
-.gold {
-  display: inline-grid;
-  justify-content: center;
-  position: relative;
-  top: -10vw;
-
+.table-data {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    font-size: 3vw;
+    font-weight: bold;
 }
 
-.silver>img,
-.gold>img {
-  height: 30vw;
-  width: 100%;
+.table-row {
+    border-bottom: 1px solid black;
+    margin-bottom: 1vw;
 }
 
-.medal-data {
-  background-image: url(./img/Silver\ \ bronze\ bg\ box-min.png);
-  background-repeat: no-repeat;
-  height: 40vw;
-  /* width: 2vw; */
-  background-size: contain;
-  position: relative;
-  top: -15vw;
-  z-index: -1;
+/* -----leaderboard baner----- */
+#leaderboard-banner {
+    height: 205vw;
+}
+
+.leaderboard-list {
+    background-image: url(./img/Leaderboard\ rect-min.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-columns: 10% 15% 40% 20% 15%;
+    align-items: center;
+    font-weight: bold;
+    color: burlywood;
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 3.5vw;
+}
+
+#profile-img {
+    height: 10vw;
+}
+
+#beans-img {
+    height: 6vw;
+}
+
+#leaderboard-title {
+    padding: 15vw 0 4vw;
+}
+
+#medal {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-evenly;
+    margin: 24vw 0 4vw;
+}
+
+#silver,
+#bronze {
+    background-image: url(./img/Silver\ \ bronze\ bg\ box-min.png);
+    background-size: 100% 100%;
+    height: 30vw;
+    width: 25vw;
+    background-repeat: no-repeat;
+}
+
+#gold {
+    background-image: url(./img/Gold\ background\ box-min.png);
+    background-size: 100% 100%;
+    height: 30vw;
+    width: 25vw;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 10vw;
+}
+
+#silver-medal-img {
+    height: 30vw;
+    position: relative;
+    top: -28vw;
+    left: -1vw;
 }
 
 .medal-info {
-  position: relative;
-  font-size: 3vw;
-  text-align: center;
-  color: burlywood;
-  font-weight: bold;
-  top: -13vw;
+    font-size: 3.5vw;
+    font-weight: bold;
+    position: relative;
+    top: 15vw;
+    color: burlywood;
 }
 
-.silver-medal {
-  z-index: 2;
-  position: relative;
-  top: 15vw;
+/* -----action tab------ */
+.action-img {
+    height: 10vw;
+}
+
+.action {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    row-gap: 5vw;
+}
+
+#footer {
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+
 }
